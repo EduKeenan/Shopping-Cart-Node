@@ -1,14 +1,14 @@
 const connection = require('./connection');
 const userModule = {
     cadastrarUsuario : async function(body){
-        let result;
         try{
-            result = await connection.execute(`INSERT INTO usuario
-            (nome, email, sobrenome, senha)
-            VALUES ('${body.nome}', 
-            '${body.email}', 
-            '${body.sobrenome}', 
-            '${body.senha}')`);
+            await connection.execute(`INSERT INTO usuario
+                (nome, email, sobrenome, senha)
+                VALUES (
+                '${body.nome}', 
+                '${body.email}', 
+                '${body.sobrenome}', 
+                '${body.senha}')`);
         }catch(error){
             return {status: 500, message: `Erro SQL.`};
         }
