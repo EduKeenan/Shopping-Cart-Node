@@ -1,6 +1,7 @@
 /*global process*/
 /*eslint no-undef: "error"*/
 const mysql = require(`mysql2/promise`);
+require('dotenv').config();
 
 const connection = mysql.createPool({
     host: process.env.DB_HOST,
