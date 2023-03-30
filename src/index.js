@@ -1,10 +1,8 @@
-/*global process*/
-/*eslint no-undef: "error"*/
 const express = require('express');
 const bodyParser = require('body-parser');
 const rotas = require(`./router`);
 const app = express();
-require('dotenv').config();
+require('dotenv/config');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
